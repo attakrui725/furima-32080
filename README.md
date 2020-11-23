@@ -25,7 +25,7 @@
 |delivery_fee_id    |integer    |null: false|
 |shipment_source_id |integer    |null: false|
 |day_to_ship_id     |integer    |null: false|
-|price              |string     |null: false|
+|price              |integer     |null: false|
 | user              |references | null: false,foreign_key: true|
 
 
@@ -43,16 +43,16 @@
 
 
 ### Association
-- has_many :shipping_addresses
+- has_one :shipping_address
 - belongs_to :user
-- has_one :item
+- belongs_to :item
 
 ## shipping_addresses
 
 |Column|Type|Options|
-|postal_code_id |integer    |null: false|
+|postal_code    |string     |null: false|
 |prefecture_id  |integer    |null: false|
-|cities         |string     |null: false|
+|city           |string     |null: false|
 |address        |string     |null: false|
 |building       |string     ||
 |phone number   |string     |null: false|
