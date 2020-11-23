@@ -2,12 +2,14 @@
 ## users
 
 |Column|Type|Options|
-|nickname  |string|null: false|
-|mail      |string|null: false|
-|password  |string|null: false|
-|name      |string|null: false|
-|birthday  |string|null: false|
-|name(kana)|string|null: false|
+|nickname            |string|null: false|
+|email               |string|null: false|
+|encrypted_password  |string|null: false|
+|last_name           |string|null: false|
+|first_name          |string|null: false|
+|birthday            |date  |null: false|
+|last_name_kana      |string|null: false|
+|first_name_kana     |string|null: false|
 
 ### Association
 - has_many :items
@@ -16,15 +18,15 @@
 ## items
 
 |Column|Type|Options|
-|item_name       |string     |null: false|
-|item_description|text       |null: false|
-|category        |string     |null: false|
-|item_status     |string     |null: false|
-|delivery_fee    |string     |null: false|
-|shipment_source |string     |null: false|
-|day_to_ship     |string     |null: false|
-|price           |string     |null: false|
-| user           |references | null: false,foreign_key: true|
+|name               |string     |null: false|
+|description        |text       |null: false|
+|category_id        |integer    |null: false|
+|status_id          |integer    |null: false|
+|delivery_fee_id    |integer    |null: false|
+|shipment_source_id |integer    |null: false|
+|day_to_ship_id     |integer    |null: false|
+|price              |string     |null: false|
+| user              |references | null: false,foreign_key: true|
 
 
 ### Association
@@ -33,8 +35,10 @@
 
 ## buyers
 
-|Column|Type|Options|
+|Column          |Type       |Options|
 | user           |references | null: false,foreign_key: true|
+| item           |references | null: false,foreign_key: true|
+
 
 
 
@@ -46,12 +50,14 @@
 ## shipping_addresses
 
 |Column|Type|Options|
-|postal_code |string|null: false|
-|prefecture  |string|null: false|
-|cities      |string|null: false|
-|address     |string|null: false|
-|building    |string|null: false|
-|phone number|string|null: false|
+|postal_code_id |integer    |null: false|
+|prefecture_id  |integer    |null: false|
+|cities         |string     |null: false|
+|address        |string     |null: false|
+|building       |string     ||
+|phone number   |string     |null: false|
+|buyer          |references | null: false,foreign_key: true|
+
 
 
 ### Association
