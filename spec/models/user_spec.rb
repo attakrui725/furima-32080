@@ -1,3 +1,5 @@
+# bundle exec rspec spec/models/user_spec.rb
+
 require 'rails_helper'
 RSpec.describe User, type: :model do
   before do
@@ -28,12 +30,12 @@ RSpec.describe User, type: :model do
         another_user = FactoryBot.build(:user)
         another_user.email = @user.email
         another_user.valid?
-        expect(another_user.errors.full_messages).to include("Email has already been taken")
+        expect(another_user.errors.full_messages).to include('Email has already been taken')
       end
       it 'メールアドレスは、@が含まれていなければ登録できない' do
         @user.email = 'yahoo'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Email is invalid")
+        expect(@user.errors.full_messages).to include('Email is invalid')
       end
       it 'passwordが空では登録できない' do
         @user.password = ''
@@ -88,12 +90,12 @@ RSpec.describe User, type: :model do
       it 'last_name_kanaが半角では保存できない' do
         @user.last_name_kana = 'aaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name kana は全角カタカナで入力して下さい。")
+        expect(@user.errors.full_messages).to include('Last name kana は全角カタカナで入力して下さい。')
       end
       it 'last_name_kanaがカタカナでなければ保存できない' do
         @user.last_name_kana = 'あああ'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name kana は全角カタカナで入力して下さい。")
+        expect(@user.errors.full_messages).to include('Last name kana は全角カタカナで入力して下さい。')
       end
       it 'first_name_kanaが空では保存できない' do
         @user.first_name_kana = ''
@@ -103,12 +105,12 @@ RSpec.describe User, type: :model do
       it 'first_name_kanaが半角では保存できない' do
         @user.first_name_kana = 'aaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include("First name kana は全角カタカナで入力して下さい。")
+        expect(@user.errors.full_messages).to include('First name kana は全角カタカナで入力して下さい。')
       end
       it 'first_name_kanaがカタカナでなければ保存できない' do
         @user.first_name_kana = 'あああ'
         @user.valid?
-        expect(@user.errors.full_messages).to include("First name kana は全角カタカナで入力して下さい。")
+        expect(@user.errors.full_messages).to include('First name kana は全角カタカナで入力して下さい。')
       end
 
       it 'birthdayが空では保存できない' do
