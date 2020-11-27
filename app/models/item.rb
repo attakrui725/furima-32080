@@ -19,5 +19,9 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :genre, :status, :delivery_fee, :day_to_ship, :shipment_source
+  belongs_to :genre   
+  belongs_to :status
+  belongs_to :delivery_fee
+  belongs_to :day_to_ship
+  belongs_to :shipment_source
 end
