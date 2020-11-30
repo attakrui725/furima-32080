@@ -23,10 +23,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def edit
-    @item = Item.find(params[:id])
-    redirect_to new_user_session_path unless @item.user_id == current_user.id
-  end
+  # def edit
+  #   @item = Item.find(params[:id])
+  #   redirect_to new_user_session_path unless @item.user_id == current_user.id
+  # end
 
   # def update
   #   @item = Item.find(params[:id])
