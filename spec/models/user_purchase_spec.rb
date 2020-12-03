@@ -12,6 +12,11 @@ RSpec.describe UserPurchase, type: :model do
     expect(@user_purchase).to be_valid
   end
 
+  it '建物名が抜けていても登録できること' do
+    @user_purchase.building = ''
+    expect(@user_purchase).to be_valid
+  end
+
   it 'tokenが空では保存できないこと' do
     @user_purchase.token = ''
     @user_purchase.valid?
