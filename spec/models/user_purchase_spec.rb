@@ -59,4 +59,17 @@ RSpec.describe UserPurchase, type: :model do
     @user_purchase.valid?
     expect(@user_purchase.errors.full_messages).to include('Phone number is invalid. Phone number Input only number')
   end
+
+  it 'user_idが空では保存できないこと' do
+    @user_purchase.user_id = ''
+    @user_purchase.valid?
+    expect(@user_purchase.errors.full_messages).to include("User can't be blank")
+  end
+
+it 'item_idが空では保存できないこと' do
+  @user_purchase.item_id = ''
+  @user_purchase.valid?
+  expect(@user_purchase.errors.full_messages).to include("Item can't be blank")
+end
+
 end

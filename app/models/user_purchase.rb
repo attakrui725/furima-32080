@@ -17,6 +17,5 @@ class UserPurchase
     order = Order.create(user_id: user_id, item_id: item_id)
 
     ShippingAddress.create(postal_code: postal_code, prefecture: prefecture, city: city, address: address, building: building, phone_number: phone_number, order_id: order.id)
-    Order.create(user_id: user_id, item_id: item_id)
   end
 end
