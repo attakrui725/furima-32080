@@ -13,7 +13,7 @@
 
 ### Association
 - has_many :items
-- has_many :buyers
+- has_many :orders
 
 ## items
 
@@ -31,9 +31,9 @@
 
 ### Association
 - belongs_to :user
-- has_one :buyer
+- has_one :order
 
-## buyers
+## orders
 
 |Column          |Type       |Options|
 | user           |references | null: false,foreign_key: true|
@@ -49,16 +49,16 @@
 
 ## shipping_addresses
 
-|Column|Type|Options|
+|Column         |Type       |Options|
 |postal_code    |string     |null: false|
-|prefecture_id  |integer    |null: false|
+|prefecture     |integer    |null: false|
 |city           |string     |null: false|
 |address        |string     |null: false|
-|building       |string     ||
-|phone number   |string     |null: false|
-|buyer          |references | null: false,foreign_key: true|
+|building       |string     |           |
+|phone_number   |string     |null: false|
+|order          |references | null: false,foreign_key: true|
 
 
 
 ### Association
-- belongs_to :buyer
+- belongs_to :order
