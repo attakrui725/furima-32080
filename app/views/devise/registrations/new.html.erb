@@ -2,12 +2,12 @@
 
 
 <div class='form-wrap'>
-  <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
   <div class='form-header'>
     <h1 class='form-header-text'>
       会員情報入力
     </h1>
   </div>
+  <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
   
   <%= render 'shared/error_messages', model: f.object %>
   <div class="form-group">
@@ -100,6 +100,5 @@
   <p class='register-info'>本人情報の登録について</p>
   <% end %>
 </div>
-
 
 <%= render "shared/second-footer"%>
