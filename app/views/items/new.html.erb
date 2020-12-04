@@ -5,7 +5,7 @@
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">商品の情報を入力</h2>
-    <%= form_with model: @item, url: items_path, local: true do |f| %>
+    <%= form_with model: @item, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 
@@ -140,9 +140,8 @@
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
-</div>
   <% end %>
-</div>
+  </div>
   
   <footer class="items-sell-footer">
     <ul class="menu">
@@ -155,3 +154,4 @@
       ©︎Furima,Inc.
     </p>                                      
   </footer>
+</div>
